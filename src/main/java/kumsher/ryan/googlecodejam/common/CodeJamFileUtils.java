@@ -14,18 +14,18 @@ public class CodeJamFileUtils {
     return readLines(getFileName(fileName, year, round, problem));
   }
 
-  public static List<String> readLines(String fileName) {
+  private static List<String> readLines(String fileName) {
     try {
       File inputFile = new File(fileName);
-      List<String> inputLines = FileUtils.readLines(inputFile, Charset.defaultCharset());
-      return inputLines;
+      return FileUtils.readLines(inputFile, Charset.defaultCharset());
     } catch (IOException ex) {
       throw new UncheckedIOException(ex);
     }
   }
 
-  public static void writeSolution(String fileName, int year, String round, String problem,
-          List<String> outputLines) {
+  public static void writeSolution(
+      String fileName, int year, String round, String problem, List<String> outputLines) {
+    outputLines.forEach(System.out::println);
     writeLines(getFileName(fileName, year, round, problem), outputLines);
   }
 
@@ -33,7 +33,7 @@ public class CodeJamFileUtils {
     return "src/main/resources/" + year + "/" + round + "/" + problem + "/" + fileName;
   }
 
-  public static void writeLines(String fileName, List<String> outputLines) {
+  private static void writeLines(String fileName, List<String> outputLines) {
     try {
       FileUtils.writeLines(new File(fileName), outputLines);
     } catch (IOException ex) {
