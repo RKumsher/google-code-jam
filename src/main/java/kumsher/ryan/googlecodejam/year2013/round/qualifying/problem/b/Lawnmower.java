@@ -2,13 +2,12 @@ package kumsher.ryan.googlecodejam.year2013.round.qualifying.problem.b;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 import com.google.common.collect.Lists;
 
